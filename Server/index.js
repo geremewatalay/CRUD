@@ -7,7 +7,13 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 
-mongoose.connect("mongodb+srv://crud:1213geR@@cluster0.ew0l3eb.mongodb.net/")
+// Connect to MongoDB
+
+mongoose
+  .connect('mongodb+srv://crud:1213geR%40@cluster0.ew0l3eb.mongodb.net/myDatabase?retryWrites=true&w=majority')
+  .then(() => console.log('Connected to MongoDB'))
+  .catch((err) => console.error('Error connecting to MongoDB:', err));
+
 
 app.post("/createUser",(req,res)=>{
     UserModel.create(req.body)

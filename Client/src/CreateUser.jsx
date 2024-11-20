@@ -5,7 +5,6 @@ function CreateUser() {
    const [name,setName] = useState('')
    const [email,setEmail] =useState('')
    const [age,setAge] =useState('')
-   const [password, setPassword] = useState(''); 
 
 
    const Submit = (e)=>{
